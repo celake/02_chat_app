@@ -6,7 +6,7 @@ import cloudinary from "../lib/cloudinary.js"
 
 export const signup = async (req, res) => {
     const { fullName, email, password } = req.body;
-
+    console.log("hit signup route")
     try {
         if (password.length < 6) {
             return res.status(400).json({message: "Password must be at least 6 characters"});
