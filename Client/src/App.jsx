@@ -14,13 +14,12 @@ import ProfilePage from "./Pages/ProfilePage";
 import SettingsPage from "./Pages/SettingsPage";
 
 export default function App() {
-    const { authUser, checkAuth, isCheckingAuth} = useAuthStore();
+    const { authUser, checkAuth, isCheckingAuth, onlineUsers } = useAuthStore();
     const { theme } = useThemeStore();
+
     useEffect(() => {
       checkAuth();
     }, [checkAuth]);
-
-    console.log( { authUser });
 
     if (isCheckingAuth && !authUser) return (
         <div className="flex items-center ustify-center h-screen">
